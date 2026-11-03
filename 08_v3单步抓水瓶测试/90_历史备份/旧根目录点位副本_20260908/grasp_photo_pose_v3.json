@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "saved_name": "抓取拍照点_v3",
+  "saved_at": 1788761175.9740872,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.41676051794977975,
+    0.21979079844364893,
+    0.5409807223359488,
+    -0.04302305543692635,
+    0.7578473798626042,
+    0.040169626857375726,
+    0.6497713187137578
+  ],
+  "source": "official_sdk.get_current_robottarget(0)",
+  "stable_samples": 10,
+  "max_component_change": 4.8405723873656825e-14,
+  "note": "user-confirmed current position as grasp photo point; v3 bottle test"
+}

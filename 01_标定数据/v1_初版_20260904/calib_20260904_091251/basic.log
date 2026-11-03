@@ -1,0 +1,55 @@
+method=tsai translation_rms_m=0.328931 rotation_rms_deg=57.2524
+method=park translation_rms_m=0.297819 rotation_rms_deg=56.9146
+method=horaud translation_rms_m=0.169027 rotation_rms_deg=49.2545
+method=andreff translation_rms_m=0.187935 rotation_rms_deg=49.4385
+method=daniilidis translation_rms_m=0.161722 rotation_rms_deg=49.3317
+=== RESULT ===
+{
+  "schema_version": 1,
+  "camera_id": "right_wrist_d405",
+  "parent_frame": "right_tcp",
+  "child_frame": "right_d405_link",
+  "method": "daniilidis",
+  "translation_m": [
+    -0.025537481220962898,
+    0.30513794110403425,
+    -0.01911618196949233
+  ],
+  "quaternion_xyzw": [
+    0.027326662277172335,
+    -0.28628489041634386,
+    0.957718306745768,
+    -0.00835822780920326
+  ],
+  "translation_rms_m": 0.16172156141783905,
+  "rotation_rms_deg": 49.33171612509251,
+  "sample_count": 13,
+  "valid": true,
+  "samples_used": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}
+=== YAML ===
+schema_version: 1
+camera_id: right_wrist_d405
+parent_frame: right_tcp
+child_frame: right_d405_link
+translation_m: [-0.025537481, 0.305137941, -0.019116182]
+quaternion_xyzw: [0.027326662, -0.286284890, 0.957718307, -0.008358228]
+translation_rms_m: 0.161721561
+rotation_rms_deg: 49.331716
+sample_count: 13
+valid: true
+

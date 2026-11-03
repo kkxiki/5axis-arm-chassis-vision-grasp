@@ -1,0 +1,10 @@
+schema_version: 1
+camera_id: right_wrist_d405
+parent_frame: right_tcp
+child_frame: right_d405_link
+translation_m: [-0.081000864, -0.000474510, 0.047211825]
+quaternion_xyzw: [-0.219579606, 0.268734356, -0.431940755, 0.832462508]
+translation_rms_m: 0.029794933
+rotation_rms_deg: 117.194168
+sample_count: 11
+valid: true

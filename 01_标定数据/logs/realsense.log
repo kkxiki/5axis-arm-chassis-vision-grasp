@@ -1,0 +1,30 @@
+[INFO] [1788483096.678777057] [camera.camera]: RealSense ROS v4.58.3
+[INFO] [1788483096.678972133] [camera.camera]: Built with LibRealSense v2.58.3
+[INFO] [1788483096.679001190] [camera.camera]: Running with LibRealSense v2.58.3
+ 04/09 08:51:36,680 WARNING [281472509536480] (context.cpp:41) No valid configuration file found at : /home/nvidia/.realsense-config.json loading defaults
+ 04/09 08:51:36,833 WARNING [281472509536480] (ds-motion-common.cpp:452) No HID info provided, IMU is disabled
+[INFO] [1788483096.835710660] [camera.camera]: Device with serial number 262522073618 was found.
+
+[INFO] [1788483096.835879560] [camera.camera]: Device with physical ID /sys/devices/platform/bus@0/3610000.usb/usb2/2-2/2-2:1.0/video4linux/video0 was found.
+[INFO] [1788483096.835926729] [camera.camera]: Device with name RealSense D435I was found.
+[INFO] [1788483096.836555348] [camera.camera]: Device with port number 2-2 was found.
+[INFO] [1788483096.836610262] [camera.camera]: Device USB type: 3.2
+[INFO] [1788483096.837651177] [camera.camera]: getParameters...
+[INFO] [1788483096.838746398] [camera.camera]: JSON file is not provided
+[INFO] [1788483096.838809535] [camera.camera]: Device Name: RealSense D435I
+[INFO] [1788483096.838849088] [camera.camera]: Device Serial No: 262522073618
+[INFO] [1788483096.838879521] [camera.camera]: Device physical port: /sys/devices/platform/bus@0/3610000.usb/usb2/2-2/2-2:1.0/video4linux/video0
+[INFO] [1788483096.838905505] [camera.camera]: Device FW version: 5.15.1.55
+[INFO] [1788483096.838928610] [camera.camera]: Device Product ID: 0x0B3A
+[INFO] [1788483096.838948770] [camera.camera]: Sync Mode: Off
+[WARN] [1788483097.034125018] [camera.camera]: Could not set param: rgb_camera.power_line_frequency with 3 Range: [0, 2]: parameter 'rgb_camera.power_line_frequency' could not be set: Parameter {rgb_camera.power_line_frequency} doesn't comply with integer range.
+[WARN] [1788483097.045669109] [camera.camera]: re-enable the stream for the change to take effect.
+[INFO] [1788483097.056463362] [camera.camera]: Stopping Sensor: Depth Module
+[INFO] [1788483097.056718919] [camera.camera]: Stopping Sensor: RGB Camera
+[INFO] [1788483097.078151357] [camera.camera]: Starting Sensor: Depth Module
+[INFO] [1788483097.101550073] [camera.camera]: Open profile: stream_type: Infra(1), Format: Y8, Width: 848, Height: 480, FPS: 30
+[INFO] [1788483097.101697788] [camera.camera]: Open profile: stream_type: Infra(2), Format: Y8, Width: 848, Height: 480, FPS: 30
+[INFO] [1788483097.101749117] [camera.camera]: Open profile: stream_type: Depth(0), Format: Z16, Width: 848, Height: 480, FPS: 30
+[INFO] [1788483097.116818938] [camera.camera]: Starting Sensor: RGB Camera
+[INFO] [1788483097.130419388] [camera.camera]: Open profile: stream_type: Color(0), Format: RGB8, Width: 1280, Height: 720, FPS: 15
+[INFO] [1788483097.144695563] [camera.camera]: RealSense Node Is Up!

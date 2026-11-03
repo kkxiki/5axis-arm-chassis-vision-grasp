@@ -1,0 +1,53 @@
+[PROC] sdk_pose_writer pid=21037 log=/home/nvidia/calibration/runtime/sdk_pose_writer.log
+[PROC] realsense pid=21050 log=/home/nvidia/calibration/runtime/realsense.log
+[PROC] tf_bridge pid=21094 log=/home/nvidia/calibration/runtime/five_axis_tf_bridge.log
+[PROC] mjpeg pid=21095 log=/home/nvidia/calibration/runtime/mjpeg_server.log
+[PROC] yolo pid=21096 log=/home/nvidia/calibration/runtime/yolov8_detector.log
+[PROC] localizer pid=21183 log=/home/nvidia/calibration/runtime/wrist_localizer.log
+[GW] resume {'ok': True, 'state': 'DISCONNECTED'}
+[GW] state {'arm_enabled': True, 'command_rate_hz': 0, 'connected': True, 'ok': True, 'owner': 'IDLE', 'queued': 0, 'state': 'READY'}
+NodeOptions 
+	name: {test_subscriber}
+	pub url: {}
+	sub url: {tcp://192.168.11.11:19091}
+	thread poll size: {1}
+	pub queue length: {50}
+	sub queue length: {1000}	
+init
+on_monitor_started
+zmq_version 4.3.6
+[SUB] connect: {tcp://192.168.11.11:19091}
+Creating subscription for topic: overall_system_rtstate
+Creating subscription for topic: overall_system_nrtstate
+[STATE] sdk rt ready model_count=1 model0=U05ME_0
+[GW] owner {'ok': True, 'owner': 'AUTO_TASK'}
+[MOVE] move_to_grasp_photo target=[0.42805, -0.00573, 0.36629, 0.64764, 0.43924, 0.32841, 0.52893] max_speed_mps=0.015 max_w_rps=0.12
+[MOVE] move_to_grasp_photo pos=[0.4448, 0.0024, 0.375] err_mm=[-16.8, -8.2, -8.8] dist_mm=20.6 rot_deg=2.3
+[MOVE] speedl_stop {'accepted_seq': 2000000000001, 'ok': True, 'speedl_active': False, 'state': 'READY'}
+[MOVE] move_to_grasp_photo done
+[MOVE] speedl_stop {'accepted_seq': 2000000000002, 'ok': True, 'speedl_active': False, 'state': 'READY'}
+[DETECT] target [0.7864917510824099, -0.11060104221054685, 0.25748866129772296]
+[GRIPPER] open rc=0 CTAG2F120 action=open position=0 force_pct=60
+[MOVE] move_above_bottle_horizontal target=[0.78649, -0.1106, 0.38749, 0.50971, 0.52769, 0.4879, 0.47296] max_speed_mps=0.015 max_w_rps=0.12
+[MOVE] move_above_bottle_horizontal pos=[0.4448, 0.0024, 0.3751] err_mm=[341.6, -113.0, 12.4] dist_mm=360.1 rot_deg=25.6
+[MOVE] move_above_bottle_horizontal pos=[0.464, -0.003, 0.3758] err_mm=[322.5, -107.6, 11.7] dist_mm=340.1 rot_deg=24.4
+[MOVE] move_above_bottle_horizontal pos=[0.486, -0.0091, 0.3765] err_mm=[300.5, -101.5, 11.0] dist_mm=317.4 rot_deg=23.6
+[MOVE] move_above_bottle_horizontal pos=[0.5078, -0.0154, 0.3772] err_mm=[278.7, -95.2, 10.3] dist_mm=294.7 rot_deg=23.1
+[MOVE] move_above_bottle_horizontal pos=[0.5298, -0.0218, 0.378] err_mm=[256.7, -88.8, 9.4] dist_mm=271.8 rot_deg=22.8
+[MOVE] move_above_bottle_horizontal pos=[0.5515, -0.0284, 0.3789] err_mm=[235.0, -82.2, 8.6] dist_mm=249.1 rot_deg=22.6
+[MOVE] move_above_bottle_horizontal pos=[0.5733, -0.035, 0.3796] err_mm=[213.2, -75.6, 7.9] dist_mm=226.3 rot_deg=22.4
+[MOVE] move_above_bottle_horizontal pos=[0.5949, -0.0419, 0.3805] err_mm=[191.6, -68.7, 7.0] dist_mm=203.7 rot_deg=22.3
+[MOVE] move_above_bottle_horizontal pos=[0.6164, -0.0489, 0.3813] err_mm=[170.1, -61.7, 6.2] dist_mm=181.0 rot_deg=22.2
+[MOVE] move_above_bottle_horizontal pos=[0.638, -0.0561, 0.382] err_mm=[148.4, -54.5, 5.5] dist_mm=158.2 rot_deg=22.1
+[MOVE] move_above_bottle_horizontal pos=[0.6595, -0.0633, 0.3828] err_mm=[127.0, -47.3, 4.7] dist_mm=135.6 rot_deg=22.1
+[MOVE] move_above_bottle_horizontal pos=[0.6817, -0.0765, 0.3873] err_mm=[104.8, -34.1, 0.2] dist_mm=110.2 rot_deg=92.0
+[MOVE] move_above_bottle_horizontal pos=[0.702, -0.0844, 0.3911] err_mm=[84.5, -26.2, -3.6] dist_mm=88.5 rot_deg=101.8
+[MOVE] speedl_stop {'error': 'not_ready', 'ok': False, 'state': 'RECONNECTING'}
+[MOVE] speedl_stop {'error': 'not_ready', 'ok': False, 'state': 'RECONNECTING'}
+[GW] release {'ok': True, 'owner': 'IDLE'}
+[ERROR] SpeedL rejected in move_above_bottle_horizontal: {'error': 'not_ready', 'ok': False, 'state': 'RECONNECTING'}
+sub_monitor_thread_ started.
+LoopRecv started...
+Shutting down...Failed to recv message, error: {Context was terminated}LoopRecv exited...
+~Monitor
+~TopicMessageDispatcher

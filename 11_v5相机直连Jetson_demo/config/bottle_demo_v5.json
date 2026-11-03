@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "robot_model": "taiKeU058T_0",
+  "camera_subsystem": "RsCameraSensor#0#0",
+  "image_size": [1280, 720],
+  "wrist_camera_transport": "realsense_usb3_direct",
+  "wrist_vision_url": "http://127.0.0.1:8092",
+  "handeye": {
+    "accepted": true,
+    "result_path": "../../01_标定数据/v4_手腕相机_20260909_1280x720/result.json",
+    "jetson_result_path": "/home/nvidia/5axis_v5/calibration/wrist_v4/result.json",
+    "method": "DANIILIDIS"
+  },
+  "depth": {
+    "required": true,
+    "format": "aligned uint16 depth in millimetres",
+    "min_m": 0.15,
+    "max_m": 1.50,
+    "median_patch_radius_px": 7,
+    "minimum_valid_pixels": 30
+  },
+  "localization": {
+    "active_mode": "fixed_height_rgb",
+    "future_mode": "aligned_metric_depth",
+    "target_center_z_base_m": null,
+    "target_height_confirmed": false,
+    "note": "当前用 RGB 像素射线与 arm_base 固定 Z 平面求交；接通原始深度后切换 future_mode"
+  },
+  "detection": {
+    "label": "bottle",
+    "coco_class_id": 39,
+    "minimum_confidence": 0.50,
+    "samples": 15,
+    "minimum_inliers": 9,
+    "maximum_inlier_deviation_m": 0.008,
+    "depth_sample_y_ratio_in_bbox": 0.30
+  },
+  "grasp_z_extra_m": -0.01,
+  "lift_height_m": 0.15,
+  "poses": {
+    "observe": {
+      "confirmed": true,
+      "robot_model": "taiKeU058T_0",
+      "robottarget": [
+        -0.3586971426143116,
+        -0.1483963751434606,
+        0.44071141642512696,
+        -0.5933253463848062,
+        -0.5700466024063343,
+        0.4004347607905475,
+        0.4033161375011887
+      ],
+      "saved_name": "抓取拍照位_v4",
+      "source": "official_sdk.get_current_robottarget(0)"
+    },
+    "above_ref": {"confirmed": false, "robot_model": "taiKeU058T_0", "robottarget": null},
+    "grasp_ref": {"confirmed": false, "robot_model": "taiKeU058T_0", "robottarget": null, "ref_detection_base_m": null},
+    "place_above": {"confirmed": false, "robot_model": "taiKeU058T_0", "robottarget": null},
+    "place": {"confirmed": false, "robot_model": "taiKeU058T_0", "robottarget": null},
+    "home": {"confirmed": false, "robot_model": "taiKeU058T_0", "robottarget": null}
+  }
+}

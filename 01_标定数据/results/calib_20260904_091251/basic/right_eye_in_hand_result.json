@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "camera_id": "right_wrist_d405",
+  "parent_frame": "right_tcp",
+  "child_frame": "right_d405_link",
+  "method": "daniilidis",
+  "translation_m": [
+    -0.025537481220962898,
+    0.30513794110403425,
+    -0.01911618196949233
+  ],
+  "quaternion_xyzw": [
+    0.027326662277172335,
+    -0.28628489041634386,
+    0.957718306745768,
+    -0.00835822780920326
+  ],
+  "translation_rms_m": 0.16172156141783905,
+  "rotation_rms_deg": 49.33171612509251,
+  "sample_count": 13,
+  "valid": true,
+  "samples_used": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}

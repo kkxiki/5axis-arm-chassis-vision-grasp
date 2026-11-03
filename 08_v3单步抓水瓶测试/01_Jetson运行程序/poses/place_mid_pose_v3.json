@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "saved_name": "PLACE_MID_v3_PLACEHOLDER",
+  "saved_at": 1788774896.5823617,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.9113937589487595,
+    -0.32658194610660346,
+    0.42265,
+    0.2086763432475154,
+    0.6966823352482213,
+    -0.15548154012514584,
+    0.6685158174647664
+  ],
+  "placeholder": false,
+  "confirmed": true,
+  "note": "place pose Z + 15cm, same orientation (per operator)"
+}

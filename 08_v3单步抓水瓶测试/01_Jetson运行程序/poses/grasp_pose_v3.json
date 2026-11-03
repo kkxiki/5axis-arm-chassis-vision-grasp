@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "saved_name": "抓取点_v3",
+  "saved_at": 1788777202.0523589,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.7772926204001962,
+    0.24502979126160887,
+    0.48846801847809707,
+    -0.038233877397414476,
+    0.7207986108223278,
+    0.030098218346936306,
+    0.6914344730408578
+  ],
+  "source": "official_sdk.get_current_robottarget(0)",
+  "stable_samples": 10,
+  "max_component_change": 1.7319479184152442e-14,
+  "note": "re-taught grasp aligned to bottle detected at photo; paired ref_detection_xyz updated",
+  "confirmed": true,
+  "placeholder": false,
+  "ref_detection_xyz": [
+    0.82520319938602,
+    0.2467642098728371,
+    0.4515593249459635
+  ]
+}

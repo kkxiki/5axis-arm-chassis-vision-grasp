@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "calibration_mode": "eye_in_hand",
+  "camera_id": "wrist_d435i",
+  "parent_frame": "tcp",
+  "child_frame": "d435i_color_optical_frame",
+  "method": "joint_nonlinear_soft_l1",
+  "pose_convention": "stored",
+  "gripper_T_camera_m": [
+    [
+      -0.9999615554784738,
+      0.007887270941711943,
+      0.003831255951175228,
+      0.032654410803860175
+    ],
+    [
+      -0.008715387685993326,
+      -0.9420493599670912,
+      -0.3353610672142443,
+      0.1380844165296203
+    ],
+    [
+      0.0009641486162543174,
+      -0.33538156529941543,
+      0.9420818839542345,
+      -0.15211971860996135
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "translation_m": [
+    0.032654410803860175,
+    0.1380844165296203,
+    -0.15211971860996135
+  ],
+  "quaternion_xyzw": [
+    0.0012166074123280896,
+    -0.17016926246912814,
+    0.9854050942886127,
+    -0.004212140449631813
+  ],
+  "translation_rms_mm": 4.562804217258862,
+  "translation_max_mm": 8.547931353347467,
+  "rotation_rms_deg": 1.4248052196851286,
+  "rotation_max_deg": 3.124353777565962,
+  "samples_used": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "samples_rejected": [
+    0,
+    5
+  ],
+  "checkerboard_flipped_ids": [],
+  "quality_passed": true,
+  "optimization_success": true
+}

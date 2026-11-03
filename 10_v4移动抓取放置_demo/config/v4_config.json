@@ -1,0 +1,98 @@
+{
+  "version": "4.0-demo",
+  "hardware_confirmed": false,
+  "network": {
+    "router_lan": "192.168.30.0/24",
+    "jetson_wifi_ip": "192.168.30.14",
+    "jetson_service_ip": "192.168.50.20",
+    "front_camera_ip": "192.168.30.120",
+    "front_camera_port": 8090,
+    "front_camera_transport": "orbbec_sdk_v2",
+    "front_camera_live_url": "http://192.168.50.20:8088/",
+    "base_ip": "192.168.30.200",
+    "base_command_port": 7001,
+    "controller_ip": "192.168.30.11",
+    "arm_gateway_host": "127.0.0.1",
+    "arm_gateway_port": 6200,
+    "controller_service_port": 80,
+    "controller_topic_port": 19091,
+    "wrist_camera_subsystem": "RsCameraSensor#0#0",
+    "wrist_camera_url": "tcp://192.168.30.11:19091",
+    "jetson_vision_service_url": "http://127.0.0.1:8088"
+  },
+  "mission": {
+    "target_label": "bottle",
+    "map_goal": [2.0, 0.8, 0.0],
+    "place_mode": "onboard_tray"
+  },
+  "navigation": {
+    "timeout_s": 90.0,
+    "align_timeout_s": 20.0,
+    "max_goal_distance_m": 20.0,
+    "front_standoff_m": 0.72,
+    "max_visual_approach_m": 0.65,
+    "alignment_tolerance_rad": 0.12,
+    "arm_activation_distance_m": 0.85
+  },
+  "vision": {
+    "front_timeout_s": 8.0,
+    "wrist_timeout_s": 5.0,
+    "front_min_confidence": 0.55,
+    "wrist_min_confidence": 0.75,
+    "max_detection_age_s": 0.5
+  },
+  "arm": {
+    "speed": "v10",
+    "slow_speed": "v5",
+    "motion_timeout_s": 120.0,
+    "approach_height_m": 0.10,
+    "lift_height_m": 0.15,
+    "grasp_z_offset_m": 0.0,
+    "poses": {
+      "home": [0.20, 0.00, 0.42, 0.0, 1.0, 0.0, 0.0],
+      "observe": [0.38, 0.00, 0.36, 0.0, 1.0, 0.0, 0.0],
+      "place_above": [0.16, -0.24, 0.34, 0.0, 1.0, 0.0, 0.0],
+      "place": [0.16, -0.24, 0.22, 0.0, 1.0, 0.0, 0.0]
+    }
+  },
+  "gripper": {
+    "force_pct": 60,
+    "speed_pct": 40,
+    "open_distance": 70,
+    "close_distance": 0,
+    "interval": 25,
+    "settle_s": 0.2
+  },
+  "safety": {
+    "arm_workspace_m": {
+      "x": [0.10, 0.65],
+      "y": [-0.40, 0.40],
+      "z": [0.08, 0.60]
+    }
+  },
+  "calibration": {
+    "front_camera_extrinsic": {
+      "confirmed": false,
+      "note": "新车载安装后标定 camera_front -> base_link"
+    },
+    "wrist_hand_eye": {
+      "confirmed": true,
+      "accepted_by_operator": true,
+      "result_path": "../../01_标定数据/v4_手腕相机_20260909_1280x720/result.json",
+      "jetson_result_path": "/home/nvidia/5axis_v4/calibration/wrist_v4/result.json",
+      "method": "DANIILIDIS",
+      "image_size": [1280, 720],
+      "note": "2026-09-10 用户确认该 V4 eye-in-hand 标定结果可用；tcp_T_camera 读取 result.json"
+    },
+    "base_to_arm": {
+      "confirmed": false,
+      "note": "标定 arm_base -> base_link"
+    }
+  },
+  "simulation": {
+    "initial_base_pose": {"x": 0.0, "y": 0.0, "yaw": 0.0},
+    "object_map_pose": {"x": 2.85, "y": 0.90, "yaw": 0.0},
+    "object_height_m": 0.18,
+    "object_base_after_align_m": [0.43, 0.03, 0.18]
+  }
+}

@@ -1,0 +1,15 @@
+NodeOptions 
+	name: {test_subscriber}
+	pub url: {}
+	sub url: {tcp://192.168.11.11:19091}
+	thread poll size: {1}
+	pub queue length: {50}
+	sub queue length: {1000}	
+init
+on_monitor_started
+zmq_version 4.3.6
+sub_monitor_thread_ started.
+[SUB] connect: {tcp://192.168.11.11:19091}
+LoopRecv started...
+Creating subscription for topic: overall_system_rtstate
+Creating subscription for topic: overall_system_nrtstate

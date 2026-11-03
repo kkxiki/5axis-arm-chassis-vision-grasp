@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "saved_name": "水瓶上方参考点_v3",
+  "saved_at": 1788761739.0937142,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.7612604731808102,
+    0.21623610728419496,
+    0.6378719089929531,
+    -0.02590287739745627,
+    0.7274436650939652,
+    0.01779668629858537,
+    0.6854473232957271
+  ],
+  "source": "official_sdk.get_current_robottarget(0)",
+  "stable_samples": 10,
+  "max_component_change": 4.9960036108132044e-14,
+  "note": "user-confirmed current position as grasp photo point; v3 bottle test"
+}

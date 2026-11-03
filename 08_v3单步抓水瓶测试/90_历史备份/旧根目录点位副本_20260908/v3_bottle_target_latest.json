@@ -1,0 +1,32 @@
+{
+  "detected": true,
+  "method": "largest_red_bottle_label_aligned_depth_v3_handeye",
+  "sample_count": 15,
+  "inlier_count": 15,
+  "base_xyz_m": [
+    0.8229784825447937,
+    0.24359463312159965,
+    0.38190645493209
+  ],
+  "max_deviation_m": 0.002837992603248943,
+  "last_frame": {
+    "pixel": [
+      749,
+      443
+    ],
+    "bbox": [
+      702,
+      337,
+      88,
+      163
+    ],
+    "contour_area_px": 5962.5,
+    "depth_m": 0.6620000600814819,
+    "base_xyz_m": [
+      0.8227590575081674,
+      0.24355122513861638,
+      0.3819064549320901
+    ]
+  },
+  "calibration": "/home/nvidia/calibration/标定数据/v3_重新采集_20260907/wrist_d435i_to_tcp_corrected.yaml"
+}

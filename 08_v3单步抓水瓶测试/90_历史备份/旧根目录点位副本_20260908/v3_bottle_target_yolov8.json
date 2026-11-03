@@ -1,0 +1,33 @@
+{
+  "detected": true,
+  "method": "yolov8_bottle_class39_fixed_photo_handeye_v3",
+  "sample_count": 15,
+  "inlier_count": 15,
+  "base_xyz_m": [
+    0.7483474284630534,
+    0.26069892440519055,
+    0.3942980313226548
+  ],
+  "max_deviation_m": 0.0012439787988227395,
+  "last_frame": {
+    "pixel": [
+      710,
+      437
+    ],
+    "bbox": [
+      652,
+      146,
+      115,
+      364
+    ],
+    "score": 0.8914003968238831,
+    "depth_m": 0.5450000166893005,
+    "base_xyz_m": [
+      0.7489620220748091,
+      0.26069892440519055,
+      0.3932164778360858
+    ]
+  },
+  "calibration": "/home/nvidia/calibration/标定数据/v3_重新采集_20260907/wrist_d435i_to_tcp_corrected.yaml",
+  "photo_pose": "/home/nvidia/calibration/poses/grasp_photo_pose_v3.json"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "saved_name": "PLACE_v3_PLACEHOLDER",
+  "saved_at": 0.0,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.6000,
+    0.2200,
+    0.4790,
+    -0.04302305543692635,
+    0.7578473798626042,
+    0.040169626857375726,
+    0.6497713187137578
+  ],
+  "placeholder": true,
+  "confirmed": false,
+  "note": "PLACEHOLDER only. Teach the real place pose (release point), write its XYZ/quat, then set confirmed to true."
+}

@@ -1,0 +1,43 @@
+# ArmGateway flat YAML configuration
+controller_ip: 192.168.11.11
+controller_port: 5868
+listen_ip: 127.0.0.1
+listen_port: 6200
+
+# P36: probe at most 1 second, then wait at least 30 seconds after failure.
+probe_timeout_ms: 1000
+reconnect_backoff_ms: 30000
+# Must exceed the LONGEST single blocking command ({MoveBlend --type=start}
+# replies only when the motion finishes; legs can run >2 min at v10).  With
+# the old 30 s value every long leg timed out mid-motion and forced a
+# reconnect (whose init used to re-cycle the enable = the audible clunk).
+rpc_timeout_ms: 300000
+
+# Compatibility option retained for older deployments. The current gateway
+# never sends {Disable}/{Enable} during startup or reconnect; it only sends
+# {Clear} and restores session parameters.
+reattach_enable: true
+
+# /tmp/move_actual.txt is written from ZMQ rtstate port 19091.
+heartbeat_required: false
+heartbeat_file: /tmp/move_actual.txt
+heartbeat_period_ms: 500
+heartbeat_fail_limit: 3
+heartbeat_stale_ms: 2000
+
+# Accepted motion with no actual position change is treated as a fake link.
+fake_motion_timeout_ms: 3000
+fake_motion_epsilon_m: 0.0005
+max_line_bytes: 262144
+
+# ---- SpeedL continuous teleop (ported from codex/speedl_xbox_teleop) ----
+# Keep in sync with xbox_mapping.yaml. last_count is controller CYCLES, not
+# milliseconds; confirm its duration on the real controller first.
+arm_id: single
+speedl_send_hz: 10
+speedl_watchdog_ms: 250
+speedl_last_count: 150
+speedl_zero_frames: 3
+# Gateway-side hard clamp: never pass a faster target to the controller.
+speedl_max_linear_mps: 0.080
+speedl_max_angular_radps: 0.436332

@@ -1,0 +1,3 @@
+rclpy init...
+[INFO] [1788483103.052333241] [mjpeg_stream]: subscribing to /camera/camera/color/image_raw
+MJPEG listening on http://0.0.0.0:8090/

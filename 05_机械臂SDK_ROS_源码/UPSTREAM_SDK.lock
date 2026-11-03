@@ -1,0 +1,8 @@
+name=sdk_send_recevice_demo_py
+url=https://gitee.com/zhenshi-controller-api-data/sdk_send_recevice_demo_py.git
+commit=10fcb48e684d7463db11f1ae27c08c15549ee43e
+sdk_root=Base_SDK_py
+python=3.10
+rpc_port=5868
+state_port=19091
+

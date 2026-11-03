@@ -1,0 +1,15 @@
+schema_version: 2
+calibration_mode: eye_in_hand
+camera_id: wrist_d435i
+parent_frame: tcp
+child_frame: d435i_color_optical_frame
+translation_m: [-0.135394098, 0.034514494, -0.142325269]
+quaternion_xyzw: [0.124768410, -0.126087677, 0.698006040, -0.693773961]
+translation_rms_m: 0.004713444
+rotation_rms_deg: 0.876005
+sample_count_total: 11
+sample_count_used: 10
+samples_used: [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]
+samples_excluded: [9]
+checkerboard_180_flipped_samples: [2, 3, 4, 7, 10]
+valid: true

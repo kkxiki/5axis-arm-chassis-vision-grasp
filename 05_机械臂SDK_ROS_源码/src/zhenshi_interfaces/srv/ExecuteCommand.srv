@@ -1,0 +1,7 @@
+string command
+int32 timeout_ms
+---
+bool success
+int32 transport_status
+string message
+

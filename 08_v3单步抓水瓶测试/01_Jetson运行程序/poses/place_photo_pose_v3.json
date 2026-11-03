@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "saved_name": "PLACE_PHOTO_v3_PLACEHOLDER",
+  "saved_at": 1788774577.1217103,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.3989263236385856,
+    -0.1598429753768208,
+    0.3883334070082664,
+    0.3040862401181475,
+    0.6993143647311663,
+    -0.23699397120969237,
+    0.6019342451316272
+  ],
+  "placeholder": false,
+  "confirmed": true,
+  "note": "taught live pose place_photo (10 stable samples)",
+  "check_roi_norm": [
+    0.0,
+    0.0,
+    0.5,
+    1.0
+  ]
+}

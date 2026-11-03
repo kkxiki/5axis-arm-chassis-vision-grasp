@@ -1,0 +1,23 @@
+V5 连续抓取程序启动命令
+
+一、前台启动（可直接查看运行输出）
+
+cd /home/nvidia/5axis_v5
+./scripts/run_v5_bottle_demo.sh
+
+
+二、后台启动（日志保存到 /tmp/v5_loop.log）
+
+cd /home/nvidia/5axis_v5
+nohup ./scripts/run_v5_bottle_demo.sh > /tmp/v5_loop.log 2>&1 &
+
+
+三、查看后台日志
+
+tail -f /tmp/v5_loop.log
+
+
+四、停止程序
+
+pkill -TERM -f 'run_v5_loop.py'
+pkill -TERM -f 'run_v5_fixed_demo_once.py'

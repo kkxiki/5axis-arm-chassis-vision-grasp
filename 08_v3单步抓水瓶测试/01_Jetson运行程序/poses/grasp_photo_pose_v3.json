@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "saved_name": "抓取拍照点_v3",
+  "saved_at": 1788773508.0200634,
+  "model_index": 0,
+  "model_name": "U05ME_0",
+  "pose_order": "x,y,z,qx,qy,qz,qw",
+  "translation_unit": "m",
+  "robottarget": [
+    0.4168176912628343,
+    0.21975513418213047,
+    0.540821574742635,
+    -0.04299026102535708,
+    0.7579117525861971,
+    0.04013399171746358,
+    0.649700604507307
+  ],
+  "source": "official_sdk.get_current_robottarget(0)",
+  "stable_samples": 10,
+  "max_component_change": 4.8405723873656825e-14,
+  "note": "taught live pose grasp_photo (10 stable samples)",
+  "confirmed": true,
+  "placeholder": false
+}

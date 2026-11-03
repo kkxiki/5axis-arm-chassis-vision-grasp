@@ -1,0 +1,143 @@
+# Xbox -> Zhenshi controller configuration.
+# This file is intentionally flat YAML, editable without recompiling.
+
+# Motion goes only through the local ArmGateway (127.0.0.1:6200); this process
+# never opens the controller RPC port 5868.
+allow_motion: true
+
+# USB wireless receiver: use /dev/input/by-id/...-joystick after running
+# scripts/check_xbox_receiver.sh. That by-id path is stable across reboots;
+# /dev/input/js0 is only a discovery default.
+joystick_device: /dev/input/js0
+# Optional substring from the real device name shown by the check script
+# (e.g. "Xbox Wireless Controller"). Keep empty until verified.
+expected_joystick_name: "Zikway 2.4G XBOX 360"
+# Prevents two processes from commanding the same arm at once.
+lock_path: /tmp/xbox_arm_teleop.lock
+gateway_ip: 127.0.0.1
+gateway_port: 6200
+gateway_owner: xbox
+arm_id: single
+
+# coordinate 0=Base/world, 1=Tool (mirrors the controller interface).
+base_coordinate: 0
+tool_coordinate: 1
+# Axis slots 0..5 = X, Y, Z, Roll, Pitch, Yaw. Kept for config compatibility;
+# the SpeedL sender always uses the 6-vector [vx,vy,vz,wx,wy,wz] below.
+cart_axis_x: 0
+cart_axis_y: 1
+cart_axis_z: 2
+cart_axis_roll: 3
+cart_axis_pitch: 4
+cart_axis_yaw: 5
+# Existing successful calibration poses carry 7 movable joints.
+joint_count: 5
+
+# Controller v-values, used only by the Safe Home / View MoveAbsJ commands.
+speed_fine: 5
+speed_normal: 25
+speed_fast: 50
+# Y cycles FINE -> NORMAL -> FAST when enabled.
+fast_enabled: true
+
+# ---- SpeedL continuous teleop ----
+# The joystick thread only updates a latest-velocity slot; a dedicated sender
+# pushes the latest non-zero velocity while motion is not paused.
+deadman_required: false
+lb_toggle_enable: false
+# 0 = no maximum continuous-hold guard. Set 500..30000 only if you later want
+# an additional maximum-hold limit on the deadman path.
+deadman_max_hold_ms: 0
+
+# SpeedL send rate and per-mode velocity ceilings (m/s and rad/s). Must stay in
+# sync with arm_gateway.yaml speedl_* limits. Bench first at 10 Hz / 10 mm/s.
+speedl_send_hz: 10
+fine_linear_mps: 0.010
+fine_angular_radps: 0.052360      # 3 deg/s
+normal_linear_mps: 0.030
+normal_angular_radps: 0.139626    # 8 deg/s
+fast_linear_mps: 0.060
+fast_angular_radps: 0.261799      # 15 deg/s
+
+# ---- Legacy MoveBlend-stepping parameters (no longer used for motion) ----
+# Kept only for config compatibility. The SpeedL port ignores repeat_hz,
+# step_mm_*, step_deg_* and jog_increase_count. move_timeout_sec / reach_epsilon_m
+# are still used by the View-button home arrival wait; actual_file is still used
+# by the Tool-frame rotation and the home arrival wait.
+repeat_hz: 12
+step_mm_fine: 6
+step_mm_normal: 16
+step_mm_fast: 30
+step_deg_fine: 1.5
+step_deg_normal: 4
+step_deg_fast: 8
+move_timeout_sec: 6
+reach_epsilon_m: 0.003
+actual_file: /tmp/move_actual.txt
+jog_increase_count: 50
+
+# View button: returns the arm to the bottle-grasp program's initial point
+# (the exact p_init jointtarget from yolo_result_subscriber.cpp, MoveAbsJ).
+# 7 joints; the program pads slots 8..10 with zero.
+home_joints: "-1.06146,0.0628451,0.520785,1.77869496,0.6279720,-1.220573,-0.47788196"
+# Absolute cartesian fallback (m + quaternion xyzw) if home_joints is empty.
+home_pose: "0.556973,-0.031213,0.255866,0.738797,0.316615,-0.123589,0.581945"
+
+deadzone: 0.10
+# Left-stick diagonal discrimination: a corner push keeps only the dominant axis.
+# up/down wins when |up/down| > ratio*|left/right|, otherwise left/right wins.
+diag_ratio: 1.0
+
+# Standard Linux xpad /dev/input/js* layout. Confirm with jstest and edit here
+# if the installed receiver reports different numbers.
+button_a: 0
+button_b: 1
+button_x: 2
+button_y: 3
+button_lb: 4
+button_view: 6
+button_menu: 7
+# RB = hand-eye calibration capture (right wrist D405): calls the ROS2 service
+# /right_handeye/capture once, recording one synchronized frame (D405 image +
+# robot pose) into calibration samples.json. Keep the arm still before pressing.
+button_capture: 5
+# Pause key disabled for bring-up; release sticks to stop.
+button_pause: -1
+axis_left_x: 0
+axis_left_y: 1
+axis_lt: -1
+axis_right_x: 3
+axis_right_y: 4
+axis_rt: 5
+axis_dpad_x: 6
+axis_dpad_y: 7
+
+# The normal xpad driver reports stick Up as negative. These signs give:
+# left-stick Up=X+, right-stick Up=Y+, D-pad Up=Yaw+, D-pad Right=Pitch+.
+sign_left_x: 1
+sign_left_y: -1
+sign_right_x: 1
+sign_right_y: -1
+sign_dpad_y: -1
+sign_dpad_x: 1
+triggers_are_signed: true
+trigger_threshold: 0.35
+
+# A=grab/close (state 0), B=release/open (state 2). LB is pause/resume.
+# Keep enabled only after the real hand ID and controller states are verified.
+gripper_enabled: true
+gripper_command: "/home/nvidia/calibration/ctag2f120_control.py"
+gripper_hand_id: 1
+gripper_open_state: 2
+gripper_close_state: 0
+gripper_pre_state: 1
+
+# LB + Menu held for 2 seconds = Safe Home. Never use all-zero joints as Home.
+# Provide exactly 7 verified joint values; slots 8..10 are padded with zero.
+safe_home_enabled: false
+safe_home_joints_rad: ""
+safe_home_joint_count: 7
+safe_home_speed: 50
+# View-button MoveAbsJ return to the bottle-grasp initial point (enabled).
+view_home_enabled: false
+safe_home_hold_seconds: 2.0

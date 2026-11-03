@@ -1,0 +1,6 @@
+export SDK=/home/nvidia/codex/zhenshi_ros2_py/vendor/sdk_send_recevice_demo_py/Base_SDK_py
+export ZHENSHI_SDK_ROOT="$SDK"
+export ZHENSHI_ROBOT_IP=192.168.11.11
+export PYTHONPATH="$SDK:$SDK/robot_state"
+export LD_LIBRARY_PATH="$SDK/robot_state/lib/linux/arm/22.04"
+python3 /home/nvidia/calibration/move_above_bottle_once_v3.py

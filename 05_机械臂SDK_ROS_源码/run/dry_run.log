@@ -1,0 +1,17 @@
+[INFO] [launch]: All log files can be found below /home/nvidia/.ros/log/2026-07-29-19-06-24-349377-nvidia-desktop-19973
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [driver_node-1]: process started with pid [19992]
+[driver_node-1] [WARN] [1785323184.931134287] [zhenshi_driver]: DRY-RUN MODE: SDK is not loaded and no controller command will be sent.
+[driver_node-1] [INFO] [1785323226.374906686] [zhenshi_driver]: controller command: {Enable||NotRunExecute}
+[driver_node-1] [INFO] [1785323227.227517850] [zhenshi_driver]: controller command: {Clear||NotRunExecute}
+[driver_node-1] [INFO] [1785323228.079978320] [zhenshi_driver]: controller command: {Recover||NotRunExecute}
+[driver_node-1] [INFO] [1785323229.274250883] [zhenshi_driver]: controller command: {MoveAbsJ --jointtarget_value={0,0,0,0,0,0,0,0,0,0}||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.975658271] [zhenshi_driver]: controller command: {DeleteVar --name=ros_grasp_target||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.976473312] [zhenshi_driver]: controller command: {Var --type=robottarget --name=ros_grasp_target --value={0.5,0,0.1,0,0,0,1}||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.977161341] [zhenshi_driver]: controller command: {MoveBlend --type=first_insert||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.977832888] [zhenshi_driver]: controller command: {MoveBlend --type=insert_line --robottarget_var=ros_grasp_target --zone={0.1,0.1}||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.978480498] [zhenshi_driver]: controller command: {MoveBlend --type=start||NotRunExecute}
+[driver_node-1] [INFO] [1785323230.979141614] [zhenshi_driver]: controller command: {DeleteVar --name=ros_grasp_target||NotRunExecute}
+[driver_node-1] [INFO] [1785323232.672970227] [zhenshi_driver]: controller command: {SetHandState --state=1||NotRunExecute}
+[driver_node-1] [INFO] [1785323236.755005618] [zhenshi_driver]: controller command: {Disable||NotRunExecute}
+[INFO] [driver_node-1]: process has finished cleanly [pid 19992]

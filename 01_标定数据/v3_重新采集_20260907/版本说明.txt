@@ -1,0 +1,5 @@
+版本：v3_重新采集_20260907
+Jetson 原始目录：/home/nvidia/calibration/right_v3_recollect_20260907_091131
+样本数量：11
+状态：第三版重新采集；部署时使用 corrected 结果。
+说明：此目录是复制归档，原始目录未删除。

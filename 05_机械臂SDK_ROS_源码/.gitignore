@@ -1,0 +1,8 @@
+build/
+install/
+log/
+.pytest_cache/
+__pycache__/
+*.pyc
+vendor/sdk_send_recevice_demo_py/
+

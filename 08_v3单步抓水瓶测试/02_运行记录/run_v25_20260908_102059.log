@@ -1,0 +1,69 @@
+[POSE] grasp_photo: [0.4168, 0.2198, 0.5408] q=[-0.043, 0.7579, 0.0401, 0.6497]
+[POSE] above_ref: [0.7773, 0.245, 0.6385] q=[-0.0382, 0.7208, 0.0301, 0.6914]
+[POSE] grasp_ref: [0.7773, 0.245, 0.4885] q=[-0.0382, 0.7208, 0.0301, 0.6914]
+[POSE] place_photo: [0.3989, -0.1598, 0.3883] q=[0.3041, 0.6993, -0.237, 0.6019]
+[POSE] place_mid: [0.9114, -0.3266, 0.4227] q=[0.2087, 0.6967, -0.1555, 0.6685]
+[POSE] place: [0.9114, -0.3266, 0.2727] q=[0.2087, 0.6967, -0.1555, 0.6685]
+[PLAN] S1 grasp-photo: [0.4168, 0.2198, 0.5408, -0.043, 0.7579, 0.0401, 0.6497]
+[PLAN] S5 place-photo : [0.3989, -0.1598, 0.3883, 0.3041, 0.6993, -0.237, 0.6019]
+[PLAN] S7 place-mid   : [0.9114, -0.3266, 0.4227, 0.2087, 0.6967, -0.1555, 0.6685]
+[PLAN] S7 place       : [0.9114, -0.3266, 0.2727, 0.2087, 0.6967, -0.1555, 0.6685]
+NodeOptions 
+	name: {test_subscriber}
+	pub url: {}
+	sub url: {tcp://192.168.11.11:19091}
+	thread poll size: {1}
+	pub queue length: {50}
+	sub queue length: {1000}	
+init
+on_monitor_started
+zmq_version 4.3.6
+[SUB] connect: {tcp://192.168.11.11:19091}
+Creating subscription for topic: overall_system_rtstate
+Creating subscription for topic: overall_system_nrtstate
+[S1_to_grasp_photo] wait reach err=0.2mm
+[MOVE] S1_to_grasp_photo done err=0.2mm
+[GW-STATE] after S1_to_grasp_photo: state=READY connected=True arm_enabled=True owner=AUTO_TASK
+[VISION] bottle at [0.8749, 0.2452, 0.4495]
+[COMP] teach ref detection [0.8252, 0.2468, 0.4516]
+[COMP] delta (live - ref) = [0.0497, -0.0016, -0.0021]
+[PLAN] S3 above-bottle (waypoint): [0.827, 0.2434, 0.6364]
+[PLAN] S4 grasp (stop)           : [0.827, 0.2434, 0.4764]
+[GRIPPER] open -> CTAG2F120 action=open position=0 force_pct=60
+[S3_above_then_S4_to_grasp] wait reach err=0.2mm
+[MOVE] S3_above_then_S4_to_grasp done err=0.2mm
+[GW-STATE] after S3_above_then_S4_to_grasp: state=READY connected=True arm_enabled=True owner=AUTO_TASK
+[DWELL] S4_grasp settled 0.6s without drift
+[GRIPPER] close -> CTAG2F120 action=close position=12000 force_pct=60
+[DWELL] S4_after_close settled 0.3s without drift
+[S5_above_then_to_place_photo] wait reach err=68.6mm
+[S5_above_then_to_place_photo] wait reach err=61.2mm
+[S5_above_then_to_place_photo] wait reach err=53.7mm
+[S5_above_then_to_place_photo] wait reach err=46.2mm
+[S5_above_then_to_place_photo] wait reach err=38.8mm
+[S5_above_then_to_place_photo] wait reach err=31.3mm
+[S5_above_then_to_place_photo] wait reach err=23.9mm
+[S5_above_then_to_place_photo] wait reach err=16.4mm
+[S5_above_then_to_place_photo] wait reach err=8.8mm
+[S5_above_then_to_place_photo] wait reach err=2.0mm
+[MOVE] S5_above_then_to_place_photo done err=2.0mm
+[GW-STATE] after S5_above_then_to_place_photo: state=RECONNECTING connected=False arm_enabled=False owner=AUTO_TASK
+[PLACE-CHECK] ROI=[0.0, 0.0, 0.5, 1.0]
+[PLACE-CHECK] occupied=True
+[PLACE-CHECK] place area occupied -> placing at X - 0.10 m
+[PLAN] S7 place (offset)      : [0.8114, -0.3266, 0.2727]
+[GW] nudging recovery (state=RECONNECTING connected=False)
+[GW] nudging recovery (state=RECONNECTING connected=False)
+[S7_place_mid_then_to_place] wait reach err=0.2mm
+[MOVE] S7_place_mid_then_to_place done err=0.2mm
+[GW-STATE] after S7_place_mid_then_to_place: state=READY connected=True arm_enabled=True owner=AUTO_TASK
+[GRIPPER] open -> CTAG2F120 action=open position=0 force_pct=60
+[S8_return_to_grasp_photo] wait reach err=0.2mm
+[MOVE] S8_return_to_grasp_photo done err=0.2mm
+[GW-STATE] after S8_return_to_grasp_photo: state=READY connected=True arm_enabled=True owner=AUTO_TASK
+[DONE] bottle placed at X - 0.10 m offset, robot back at the grasp-photo pose
+sub_monitor_thread_ started.
+LoopRecv started...
+Shutting down...Failed to recv message, error: {Context was terminated}LoopRecv exited...
+~Monitor
+~TopicMessageDispatcher
